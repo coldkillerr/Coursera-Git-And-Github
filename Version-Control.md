@@ -12,7 +12,7 @@ them.
 
 ```sh
 $ cat fibo1.py 
-# Function for nth Fibonacci number 
+
 
 def Fibonacci(n): 
 	if n<0: 
@@ -26,13 +26,11 @@ def Fibonacci(n):
 	else: 
 		return Fibonacci(n-1)+Fibonacci(n-2) 
 
-# Driver Program 
+
 
 print(Fibonacci(9)) 
 
 $ cat fibo2.py 
-# Function for nth fibonacci number - Space Optimisataion 
-# Taking 1st two fibonacci numbers as 0 and 1 
 
 def fibonacci(n): 
 	a = 0
@@ -54,13 +52,8 @@ def fibonacci(n):
 
 print(fibonacci(9)) 
 
-#This code is contributed by Saket Modi 
 $ diff fibo1.py fibo2.py
-1c1,2
-< # Function for nth Fibonacci number 
----
-> # Function for nth fibonacci number - Space Optimisataion 
-> # Taking 1st two fibonacci numbers as 0 and 1 
+
 3,4c4,7
 < def Fibonacci(n): 
 < 	if n<0: 
@@ -94,3 +87,25 @@ $ diff fibo1.py fibo2.py
 ---
 > print(fibonacci(9)) 
 ```
+The less than `<` symbol tells us that
+the first line was removed from the first file,
+and the greater than `>` symbol tells us that
+the second line was added to the second file.
+In other words, the old line got replaced by the new one.
+
+We can see that diff splits
+the changes in two separate sections.
+The section that starts with `3,4c4,7` shows
+a line in the first file that was
+replaced by two different lines in the second file.
+
+The `number` at the beginning of this section indicates
+the line number in the first and second files.
+The `c` in between
+the numbers means that a line was changed.
+
+We can also
+use the `-u` flag to tell
+diff to show the differences in
+another format. 
+
