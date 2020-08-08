@@ -109,3 +109,103 @@ use the `-u` flag to tell
 diff to show the differences in
 another format. 
 
+<h2> Applying Changes </h2>
+
+Imagine a colleague sends you a script with
+a bug and asked you to help fix the issue.
+Once you understood what was wrong with the script,
+you could describe to them what they need to change. 
+
+To make the change clear,
+you could send them a `diff` with the change so that
+they can see what the modified code looks like.
+
+To do this, we typically use a command line :
+
+```sh
+$ diff-u old_file new_ file > change.diff
+```
+The `>` redirects o/p to change.diff
+
+The generated file is usually referred to as
+a `diff file` or sometimes a `patch file`.
+
+There's a command called `patch` to go through the file
+that needs to be changed,
+and apply the modifications. 
+
+Example :
+
+```sh
+
+$ cat cpu_usage.py 
+import psutil
+import shutil
+
+def cpu_usage(percent):
+	usage=psutil.cpu_percent()
+	return usage <percent
+
+if cpu_usage(75):
+	print('ERROR ! CPU OVERLOADED')
+else:
+	print('ALL GOOD')
+
+$ python3 cpu_usage.py 
+ERROR ! CPU OVERLOADED
+```
+
+Now this is erroneous.
+So we made a `diff file` with the correct code.
+
+```sh
+$ python3 cpu_usage1.py 
+DEBUG: 12.3
+ALL GOOD
+$ diff cpu_usage.py cpu_usage1.py > cpu_usage.diff
+$ cat cpu_usage.diff
+5,6c5,7
+< 	usage=psutil.cpu_percent()
+< 	return usage <percent
+---
+> 	usage=psutil.cpu_percent(1)
+> 	print('DEBUG: {}'.format(usage))
+> 	return usage> percent
+
+```
+
+So we have the `diff file`
+and we want to apply it to our script.
+We'll use the `patch` command.
+We'll pass the name of the file that we want to
+patch in this case, `cpu_usage.py`,
+as the first parameter to the command
+and then we'll provide the diff
+file through standard input.
+
+```sh
+$ patch cpu_usage.py cpu_usage.diff 
+patching file cpu_usage.py
+$ cat cpu_usage.py
+import psutil
+import shutil
+
+def cpu_usage(percent):
+	usage=psutil.cpu_percent(1)
+	print('DEBUG: {}'.format(usage))
+	return usage> percent
+
+if cpu_usage(75):
+	print('ERROR ! CPU OVERLOADED')
+else:
+	print('ALL GOOD')
+	
+$ python3 cpu_usage.py 
+DEBUG: 10.4
+ALL GOOD
+
+```
+
+
+
+
