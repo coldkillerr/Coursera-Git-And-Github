@@ -162,7 +162,9 @@ So we made a `diff file` with the correct code.
 $ python3 cpu_usage1.py 
 DEBUG: 12.3
 ALL GOOD
+
 $ diff cpu_usage.py cpu_usage1.py > cpu_usage.diff
+
 $ cat cpu_usage.diff
 5,6c5,7
 < 	usage=psutil.cpu_percent()
@@ -186,6 +188,7 @@ file through standard input.
 ```sh
 $ patch cpu_usage.py cpu_usage.diff 
 patching file cpu_usage.py
+
 $ cat cpu_usage.py
 import psutil
 import shutil
