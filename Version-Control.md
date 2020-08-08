@@ -209,6 +209,14 @@ ALL GOOD
 
 ```
 
-
+The `patch` command can
+detect that there were changes made to
+the file and will do its best to apply the diff anyways.
+But sometimes, you might be modifying
+a bunch of `large files` inside of a huge project.
+We can also diff `whole directory` structures
+and in that case the diff file can
+specify where each change file should
+be without us having to do any manual juggling. 
 
 
