@@ -16,3 +16,80 @@ our email and our name like this.
 ```
 We use the `--global` flag to state that we want to
 set this value for all git repositories that we'd use.
+
+<h2> Working with a git repository </h2>
+
+There are
+two ways to start working with a git repository.
+
+We can create one from scratch using
+the `git init` command
+
+```sh
+~$ git init
+```
+
+or we can
+use the `git clone` command to make a copy of
+a repository that already exists somewhere else.
+
+```sh
+~$ git clone repository_name
+```
+
+So when we run `git init` we
+initialize an empty git repository
+in the current directory.
+
+```sh
+~/checks$ git init
+Initialized empty Git repository in /home/nishit/checks/.git/
+```
+
+The message that we get mentions a directory called.
+git.
+
+We can check that this directory exist using
+the `ls-la` command which
+lists files that start with a `.`
+
+```sh
+~/checks$ ls -la
+total 12
+drwxrwxr-x  3 nishit nishit 4096 Aug  9 14:58 .
+drwxr-xr-x 33 nishit nishit 4096 Aug  9 14:50 ..
+drwxrwxr-x  7 nishit nishit 4096 Aug  9 14:51 .git
+```
+
+We can also use the ls-l.git command to
+look inside of it and
+see the many different things it contains.
+This is called a Git directory.
+
+
+```sh
+~/checks$ ls -l .git
+total 32
+drwxrwxr-x 2 nishit nishit 4096 Aug  9 14:51 branches
+-rw-rw-r-- 1 nishit nishit   92 Aug  9 14:51 config
+-rw-rw-r-- 1 nishit nishit   73 Aug  9 14:51 description
+-rw-rw-r-- 1 nishit nishit   23 Aug  9 14:51 HEAD
+drwxrwxr-x 2 nishit nishit 4096 Aug  9 14:51 hooks
+drwxrwxr-x 2 nishit nishit 4096 Aug  9 14:51 info
+drwxrwxr-x 4 nishit nishit 4096 Aug  9 14:51 objects
+drwxrwxr-x 4 nishit nishit 4096 Aug  9 14:51 refs
+```
+
+You can think of it as a `database` for your `Git project`
+that stores the changes and the change history.
+We can see it contains
+a bunch of different files and directories.
+We won't touch any of these files directly,
+we'll always interact with them through Git commands.
+
+The area outside the git directory is the working tree.
+The `working tree` is the current version of your project.
+This working tree will contain
+all the files that are currently tracked by Git
+and any new files that we
+haven't yet added to the list of track files
