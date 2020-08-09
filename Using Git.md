@@ -231,9 +231,34 @@ nothing to commit, working tree clean
 ```
 
 We see that once again, we have no changes to commit.
-Because the change we made has gone through the full cycle of modified,
-staged and committed.
-So to sum up, we work on modified files in our working tree.
-When they're ready, we staged these files by adding them to the staging area.
-Finally, we commit the changes sitting in our staging area, which takes a snapshot
-of those files and stores them in the database that lives in the Git directory. 
+Because the change we made has gone through the full cycle of `modified`,
+`staged` and `committed`.
+
+
+So to sum up, we work on modified files in our `working tree`.
+When they're ready, we staged these files by adding them to the `staging area`.
+Finally, we `commit` the changes sitting in our staging area, which takes a snapshot
+of those files and stores them in the database that lives in the `git directory`. 
+
+Take a look at what git tracks as part of the `log`.
+
+```sh
+~/checks$ git log
+commit 734791da9c926530c0413da3f8a62970a478f8c0 (HEAD -> master)
+Author: username <email>
+Date:   Sun Aug 9 17:01:41 2020 +0530
+
+    added . at the end of sentences
+
+commit b9c9fbeb5d057039dc72ded7cdf9e9e9f28de52a
+Author: username <email>
+Date:   Sun Aug 9 15:43:50 2020 +0530
+
+    Added cpu_usage.py
+```
+
+The first thing listed for each commit is its identifier,
+which is a long string of letters and numbers
+that uniquely identify each commit.
+The first commit in the list also says that
+the head indicator is pointing to the master branch. 
