@@ -142,3 +142,32 @@ It opens a text editor where
 we can enter a `commit message`.
 If you want, you can change
 the editor used to your preferred editor. 
+
+Each time you make a commit,
+Git records a new snapshot of the state of your project at that moment. 
+
+When we operate with Git, our files can be either tracked or untracked.
+Tracked files are part of the snapshots,
+while untracked files aren't a part of snapshots yet.
+This is the usual case for new files.
+Each track file can be in one of three main states,
+`modified`,
+`staged` or `committed`.
+
+If a file is in the `modified` state,
+it means that we've made changes to it that we haven't `committed` yet.
+The changes could be adding, modifying or deleting the contents of the file.
+Git notices anytime we modify our files.
+But won't store any changes until we add them to the staging area.
+
+So, the next step is to `stage` those changes.
+When we do this, our modified files become `stage files`.
+In other words, the changes to those files are ready to be `committed` to the project.
+All files that are staged will be part of the next snapshot we take.
+And finally, when a file gets committed,
+the changes made to it are safely stored in a snapshot in the Git directory.
+This means that typically a file tracked by Git,
+will first be `modified` when we change it in any way.
+Then it becomes `staged` when we mark those changes for tracking.
+And finally it will get `committed` when we store those changes in the VCS
+
