@@ -92,4 +92,53 @@ The `working tree` is the current version of your project.
 This working tree will contain
 all the files that are currently tracked by Git
 and any new files that we
-haven't yet added to the list of track files
+haven't yet added to the list of track files.
+
+To make Git track our file,
+we'll add it to the project using the `git add`
+command passing the file that we want as a parameter. 
+
+```sh
+~/checks$ git add cpu_usage.py 
+```
+The `staging area` which is also known
+as the `index` is a file maintained by
+Git that contains all of the information about
+what files and changes
+are going to go into your next command. 
+
+We can use the `git status` command
+to get some information about
+the current working tree and
+pending changes.
+
+```sh
+~/checks$ git status 
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   cpu_usage.py
+
+```
+We see that our new file is marked to be committed,
+this means that our change is
+currently in the staging area.
+To get it committed into the `.git` directory,
+we run the `git commit` command. 
+
+```sh
+~/checks$ git commit 
+[master (root-commit) b9c9fbe] Added cpu_usage.py
+ 1 file changed, 14 insertions(+)
+ create mode 100644 cpu_usage.py
+```
+
+When we run this command,
+we tell `Git` that we want to save our changes.
+It opens a text editor where
+we can enter a `commit message`.
+If you want, you can change
+the editor used to your preferred editor. 
