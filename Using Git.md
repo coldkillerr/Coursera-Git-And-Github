@@ -240,6 +240,23 @@ When they're ready, we staged these files by adding them to the `staging area`.
 Finally, we `commit` the changes sitting in our staging area, which takes a snapshot
 of those files and stores them in the database that lives in the `git directory`. 
 
+<h3> Commit Message </h3>
+
+A `commit message` is
+generally broken up into a few sections.
+The first line is a `short summary` of
+the commit followed by a `blank line`.
+This is followed by a `full description` of
+the changes which details why they're
+necessary and anything that might be
+especially interesting about them
+or difficult to understand.
+When you run the git commit command,
+Git will open up a text editor of
+your choice so you can write your commit message.
+
+<h3> Git Log file </h3>
+
 Take a look at what git tracks as part of the `log`.
 
 ```sh
@@ -262,3 +279,5 @@ which is a long string of letters and numbers
 that uniquely identify each commit.
 The first commit in the list also says that
 the head indicator is pointing to the master branch. 
+
+
