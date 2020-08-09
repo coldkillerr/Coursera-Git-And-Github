@@ -274,10 +274,12 @@ Date:   Sun Aug 9 15:43:50 2020 +0530
     Added cpu_usage.py
 ```
 
-The first thing listed for each commit is its identifier,
+
+The first thing listed for each commit is its `identifier`,
 which is a long string of letters and numbers
-that uniquely identify each commit.
-The first commit in the list also says that
-the head indicator is pointing to the master branch. 
+that uniquely identify each commit. 
+Then we get the `date` and `time` the commit was made.
+Finally the `commit message` is displayed.
+
 
 
