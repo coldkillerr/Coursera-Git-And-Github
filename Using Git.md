@@ -14,3 +14,5 @@ our email and our name like this.
 ~$ git config --global user.email "myemail@example.com"
 ~$ git config --global user.name "my_name"
 ```
+We use the `--global` flag to state that we want to
+set this value for all git repositories that we'd use.
