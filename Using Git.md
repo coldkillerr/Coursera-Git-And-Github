@@ -171,3 +171,69 @@ will first be `modified` when we change it in any way.
 Then it becomes `staged` when we mark those changes for tracking.
 And finally it will get `committed` when we store those changes in the VCS
 
+
+And then the current status of our files using the Git status command.
+When we run Git status,
+Git tells us a bunch of things, including that we're on the master branch. 
+
+```sh
+~/checks$ git status
+On branch master
+nothing to commit, working tree clean
+```
+
+For now, notice how it says that there's nothing to commit and
+that the working tree is clean.
+Let's modify a file to change that. 
+
+```sh
+~/checks$ nano cpu_usage.py 
+```
+So, now that we've made the change, let's call Git status again and
+see the new output Again, Git tells us a lot of things,
+including giving us some tips for commands that we might want to use. 
+
+```sh
+~/checks$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   cpu_usage.py
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+```
+
+change that by running the `git add` command.
+
+```sh
+~/checks$ git add cpu_usage.py 
+
+~/checks$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   cpu_usage.py
+```
+Our file is currently part of the `staging area`, and
+it will be committed once we run `git commit`.
+In this case, instead of opening up an editor, let's pass the commit message
+using the `-m` flag, stating that we added `.` at the end of the sentences.
+
+```sh
+~/checks$ git commit -m "added . at the end of sentences"
+[master 734791d] added . at the end of sentences
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+~/checks$ git status
+On branch master
+nothing to commit, working tree clean
+```
+
+We see that once again, we have no changes to commit.
+Because the change we made has gone through the full cycle of modified,
+staged and committed.
+So to sum up, we work on modified files in our working tree.
+When they're ready, we staged these files by adding them to the staging area.
+Finally, we commit the changes sitting in our staging area, which takes a snapshot
+of those files and stores them in the database that lives in the Git directory. 
