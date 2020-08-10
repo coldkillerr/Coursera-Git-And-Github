@@ -97,3 +97,63 @@ git shows that both the master and
 the new feature branches are
 pointing to that snapshot of the project.
 
+
+```sh
+~/checks$ git status
+On branch new-new-branch
+nothing to commit, working tree clean
+
+~/checks$ git log -2
+commit c253c81e5912bd0e9fda2c3687dd1165142599dd (HEAD -> new-new-branch)
+Author: coldkillerr <yonishitjain123456@gmail.com>
+Date:   Mon Aug 10 23:22:52 2020 +0530
+
+    added empty_file.py
+
+commit 8fd51b708874582b09b541d714505f6ee5e4978f (new-branch, master)
+Author: coldkillerr <yonishitjain123456@gmail.com>
+Date:   Mon Aug 10 20:41:40 2020 +0530
+
+    Revert "Added auto-update.py, gather-info.sh , output.txt"
+    removed auto-update.py , gather-info.sh , output.txt
+    This reverts commit ee13293d88f673a7148289e8b0b53020c4666994.
+```
+We can see that the HEAD points to the `new-new-branch`
+
+```sh
+~/checks$ ls -l
+total 8
+-rw-rw-r-- 1 nishit nishit 258 Aug 10 17:12 cpu_usage.py
+-rwxrwxr-x 1 nishit nishit  50 Aug 10 23:21 empty_file.py
+nishit@SHITBOT:~/checks$ git checkout master 
+Switched to branch 'master'
+nishit@SHITBOT:~/checks$ ls -l
+total 4
+-rw-rw-r-- 1 nishit nishit 258 Aug 10 17:12 cpu_usage.py
+```
+As soon as we change the branch we see that the file contents change too.
+
+```sh
+~/checks$ git status
+On branch master
+nothing to commit, working tree clean
+~/checks$ git log -2
+commit 8fd51b708874582b09b541d714505f6ee5e4978f (HEAD -> master, new-branch)
+Author: coldkillerr <yonishitjain123456@gmail.com>
+Date:   Mon Aug 10 20:41:40 2020 +0530
+
+    Revert "Added auto-update.py, gather-info.sh , output.txt"
+    removed auto-update.py , gather-info.sh , output.txt
+    This reverts commit ee13293d88f673a7148289e8b0b53020c4666994.
+
+commit ee13293d88f673a7148289e8b0b53020c4666994
+Author: coldkillerr <yonishitjain123456@gmail.com>
+Date:   Mon Aug 10 20:21:49 2020 +0530
+
+    Added auto-update.py, gather-info.sh , output.txt
+
+```
+Now the HEAD points to both the `master` and `new-new-branch` .
+
+
+
