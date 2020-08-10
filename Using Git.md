@@ -474,3 +474,28 @@ index 1f618b3..3b891d0 100644
 | git add -p        | Allows a user to interactively review patches to add to the current commit              |
 | git mv            | Similar to the Linux `mv` command, this moves a file                                    |
 | git rm            | Similar to the Linux `rm` command, this deletes, or removes a file                      |
+
+
+<h2> gitignore files </h2>
+
+`.gitignore` files are used to tell the git tool to intentionally `ignore` some files in a given Git repository. For example, this can be useful for configuration files or metadata files that a user may not want to check into the master branch. 
+
+Example :
+
+```sh
+~/checks$ echo unwanted_file > .gitignore
+
+~/checks$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.gitignore
+
+nothing added to commit but untracked files present (use "git add" to track)
+~/checks$ git add .gitignore 
+~/checks$ git commit -a -m 'added unwanted_file to gitignore' 
+[master ce3f895] added unwanted_file to gitignore
+ 1 file changed, 1 insertion(+)
+ create mode 100644 .gitignore
+```
+
