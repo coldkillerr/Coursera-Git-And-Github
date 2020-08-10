@@ -86,18 +86,14 @@ Date:   Mon Aug 10 20:21:49 2020 +0530
 
 
 We've added a commit in
-this branch and it's looking better.
+this `branch` and it's looking better.
 Let's check the last two entries in the log.
 We see the last two commits in this branch.
-Notice how next to the latest commit ID,
-git shows that this is where head is pointing
-to and that the branch is called even better feature.
+Notice how next to the latest `commit ID`,
+git shows that this is where `head` is pointing
+to and that the branch is called `new-new-branch`.
 Next to the previous commit,
 git shows that both the master and
 the new feature branches are
 pointing to that snapshot of the project.
-In this way, we can see that
-the even better feature branch
-is ahead of the master branch.
-With that, we've seen how we can
-create new branches and commit changes to them. 
+
