@@ -20,3 +20,11 @@ We could get a list of all branches using `git branch` command
 ~/checks$ git branch 
 * master
 ```
+We can create a new branch by writing branch name at the end of the `git branch` command. 
+
+```sh
+~/checks$ git branch new-branch
+nishit@SHITBOT:~/checks$ git branch 
+* master
+  new-branch
+```
