@@ -282,4 +282,65 @@ Then we get the `date` and `time` the commit was made.
 Finally the `commit message` is displayed.
 
 
+The separate step between `staging` and
+`committing` allows us to
+stage several changes in one commit.
+But if we already know that
+the current changes are the ones that we want to `commit`,
+we can skip the `staging` step
+and go directly to the commit. 
 
+We do this by using the 
+`-a` flag to the git commit command.
+This flag automatically stages
+every file that's tracked and
+modified before doing the commit
+letting it skip the `git add` step. 
+
+`git commit -a` is a shortcut to stage
+any changes to tracked files and commit them in one step. 
+
+```sh
+$ git commit -a -m "Added exit status 1 and 0 for if and else "
+[master d0c8471] Added exit status 1 and 0 for if and else
+ 1 file changed, 3 insertions(+)
+```
+
+These shortcuts are useful
+when making small changes that we know we'll want
+to commit directly without keeping them in
+the staging area and having to write
+long and complex descriptions. 
+
+<h2> Head </h2>
+
+Git uses the head alias to represent
+the currently checked out snapshot of your project.
+This lets you know what the contents
+of your working directory should be.
+In this case, the current snapshot
+is the latest commit in the project. When you run git commands like diff, branch, or status,
+git will use the head bookmark as
+a basis for whatever operation it's performing. 
+
+```sh
+~/checks$ git log
+commit d0c84718b14446e262f0b981106cfa7521a4c8de (HEAD -> master)
+Author: name <email>
+Date:   Mon Aug 10 15:51:28 2020 +0530
+
+    Added exit status 1 and 0 for if and else
+
+commit 734791da9c926530c0413da3f8a62970a478f8c0
+Author: name <email>
+Date:   Sun Aug 9 17:01:41 2020 +0530
+
+    added . at the end of sentences
+
+commit b9c9fbeb5d057039dc72ded7cdf9e9e9f28de52a
+Author: name <email>
+Date:   Sun Aug 9 15:43:50 2020 +0530
+
+    Added cpu_usage.py
+
+```
