@@ -141,3 +141,11 @@ nothing added to commit but untracked files present (use "git add" to track)
  create mode 100644 output.txt
 ~/checks$ 
 ```
+Fixing up a local commit with `amend` is
+great and you can push it to
+a shared repository after you fixed it.
+But you should `avoid amending`
+commits that have already been `made public`.
+If this sounds confusing now, don't worry.
+We'll mention it again when we talk about
+collaborating with others through shared repositories.
