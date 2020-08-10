@@ -44,7 +44,7 @@ nothing to commit, working tree clean
 
 <h2> Undoing changes after adding them </h2>
 
-f we realize we've added something to
+If we realize we've added something to
 the staging area that we didn't actually want to commit,
 we can unstage our changes
 by using the `git reset` command. 
