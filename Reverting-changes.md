@@ -149,3 +149,43 @@ commits that have already been `made public`.
 If this sounds confusing now, don't worry.
 We'll mention it again when we talk about
 collaborating with others through shared repositories.
+
+<h2> Rollbacks </h2>
+
+```sh
+~/checks$ git revert HEAD 
+Removing output.txt
+Removing gather-info.sh
+Removing auto-update.py
+[master 8fd51b7] Revert "Added auto-update.py, gather-info.sh , output.txt" removed auto-update.py , gather-info.sh , output.txt This reverts commit ee13293d88f673a7148289e8b0b53020c4666994.
+ 3 files changed, 2 deletions(-)
+ delete mode 100644 auto-update.py
+ delete mode 100644 gather-info.sh
+ delete mode 100644 output.txt
+ 
+ ~/checks$ git log -p -2
+commit 8fd51b708874582b09b541d714505f6ee5e4978f (HEAD -> master)
+Author: username <email>
+Date:   Mon Aug 10 20:41:40 2020 +0530
+
+    Revert "Added auto-update.py, gather-info.sh , output.txt"
+    removed auto-update.py , gather-info.sh , output.txt
+    This reverts commit ee13293d88f673a7148289e8b0b53020c4666994.
+
+diff --git a/auto-update.py b/auto-update.py
+deleted file mode 100644
+index e69de29..0000000
+diff --git a/gather-info.sh b/gather-info.sh
+deleted file mode 100644
+index e69de29..0000000
+diff --git a/output.txt b/output.txt
+deleted file mode 100644
+index 6ca0f15..0000000
+--- a/output.txt
++++ /dev/null
+@@ -1,2 +0,0 @@
+-DEBUG: 11.5.
+-ALL GOOD.
+
+
+```
