@@ -1,6 +1,10 @@
 <h1> Reverting Changes </h1>
 
-Git provides different methods to roll-back to previous versions of a file or project
+Being able to revert our changes is one of
+the most powerful features
+offered by version control systems.
+There's a bunch of different techniques available
+depending on which changes we need to undo. 
 
 <h2> Undoing chaanges before the commit </h2>
 
