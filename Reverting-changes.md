@@ -152,6 +152,20 @@ collaborating with others through shared repositories.
 
 <h2> Rollbacks </h2>
 
+There are a few ways to rollback commits in Git.
+For now, we'll focus on using the `git revert` command.
+Git revert doesn't just mean undo.
+Instead, it creates a commit that contains the inverse of
+all the changes made in
+the bad commit in order to cancel them out.
+For example,
+if a particular line was added in the bad commit,
+then in the reverted commit,
+the same line will be deleted.
+This way you get the effect of having undone the changes,
+but the history of the commits in the project remains
+consistent leaving a record of exactly what happened. 
+
 ```sh
 ~/checks$ git revert HEAD 
 Removing output.txt
