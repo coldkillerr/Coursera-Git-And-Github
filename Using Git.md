@@ -274,6 +274,94 @@ Date:   Sun Aug 9 15:43:50 2020 +0530
     Added cpu_usage.py
 ```
 
+We can get more information like changes , additions , etc using the `-p` tag which stands for patch.
+
+
+```sh
+~/checks$ git log -p
+commit d0c84718b14446e262f0b981106cfa7521a4c8de (HEAD -> master)
+Author: coldkillerr <yonishitjain123456@gmail.com>
+Date:   Mon Aug 10 15:51:28 2020 +0530
+
+    Added exit status 1 and 0 for if and else
+
+diff --git a/cpu_usage.py b/cpu_usage.py
+index 3b891d0..79f9b8f 100644
+--- a/cpu_usage.py
++++ b/cpu_usage.py
+@@ -1,5 +1,6 @@
+ import psutil
+ import shutil
++import sys
+ 
+ def cpu_usage(percent):
+        usage=psutil.cpu_percent(1)
+@@ -8,7 +9,9 @@ def cpu_usage(percent):
+ 
+ if cpu_usage(75):
+        print('ERROR ! CPU OVERLOADED.')
++       sys.exit(0)
+ else:
+        print('ALL GOOD.')
++       sys.exit(1)
+ 
+ 
+
+commit 734791da9c926530c0413da3f8a62970a478f8c0
+Author: coldkillerr <yonishitjain123456@gmail.com>
+Date:   Sun Aug 9 17:01:41 2020 +0530
+
+    added . at the end of sentences
+
+diff --git a/cpu_usage.py b/cpu_usage.py
+index 1f618b3..3b891d0 100644
+--- a/cpu_usage.py
++++ b/cpu_usage.py
+@@ -3,12 +3,12 @@ import shutil
+ 
+ def cpu_usage(percent):
+        usage=psutil.cpu_percent(1)
+-       print('DEBUG: {}'.format(usage))
++       print('DEBUG: {}.'.format(usage))
+        return usage> percent
+ 
+ if cpu_usage(75):
+-       print('ERROR ! CPU OVERLOADED')
++       print('ERROR ! CPU OVERLOADED.')
+ else:
+-       print('ALL GOOD')
++       print('ALL GOOD.')
+ 
+ 
+
+commit b9c9fbeb5d057039dc72ded7cdf9e9e9f28de52a
+Author: coldkillerr <yonishitjain123456@gmail.com>
+Date:   Sun Aug 9 15:43:50 2020 +0530
+
+    Added cpu_usage.py
+
+diff --git a/cpu_usage.py b/cpu_usage.py
+new file mode 100644
+index 0000000..1f618b3
+--- /dev/null
++++ b/cpu_usage.py
+@@ -0,0 +1,14 @@
++import psutil
++import shutil
++
++def cpu_usage(percent):
++       usage=psutil.cpu_percent(1)
++       print('DEBUG: {}'.format(usage))
++       return usage> percent
++
++if cpu_usage(75):
++       print('ERROR ! CPU OVERLOADED')
++else:
++       print('ALL GOOD')
++
++
+```
+
 
 The first thing listed for each commit is its `identifier`,
 which is a long string of letters and numbers
