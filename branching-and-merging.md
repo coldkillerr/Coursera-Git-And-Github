@@ -153,7 +153,7 @@ Date:   Mon Aug 10 20:21:49 2020 +0530
     Added auto-update.py, gather-info.sh , output.txt
 
 ```
-Now the HEAD points to both the `master` and `new-new-branch` .
+Now the `HEAD` points to both the `master` and `new-new-branch` .
 
 
 
