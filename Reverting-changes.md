@@ -6,7 +6,7 @@ offered by version control systems.
 There's a bunch of different techniques available
 depending on which changes we need to undo. 
 
-<h2> Undoing chaanges before staging</h2>
+<h2> Undoing changes before staging</h2>
 
 You can change a file back to
 its earlier committed state by using
