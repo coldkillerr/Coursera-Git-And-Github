@@ -163,5 +163,12 @@ We can do that by using `git branch -d`.
 ~/checks$ git branch -d new-new-new-branch 
 Deleted branch new-new-new-branch (was 8fd51b7).
 ```
+Git warns us about `Unmerged branches` 
+
+```sh
+~/checks$ git branch -d new-new-branch 
+error: The branch 'new-new-branch' is not fully merged.
+If you are sure you want to delete it, run 'git branch -D new-new-branch'.
+```
 
 
