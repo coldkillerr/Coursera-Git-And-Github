@@ -107,7 +107,27 @@ nishit@SHITBOT:~/checks$ git merge new-new-branch
 Already up to date.
 nishit@SHITBOT:~/checks$ 
 ```
-In this way we can resolve any conflict
+In this way we can resolve any conflict .
+
+
+We can use `git log --graph` ti visualize the log history in a better way .
+
+
+```sh
+~/checks$ git log --graph --oneline 
+*   498d83e (HEAD -> master) Added both lines (comment and print)
+|\  
+| * d04a331 (new-new-branch) Added a print function to the main function
+* | 8cd9f96 Added a line to the main function
+|/  
+* c253c81 added empty_file.py
+* 8fd51b7 (new-branch) Revert "Added auto-update.py, gather-info.sh , output.txt" removed auto-update.py , gather-info.sh , output.txt This reverts commit ee13293d88f673a7148289e8b0b53020c4666994.
+* ee13293 Added auto-update.py, gather-info.sh , output.txt
+* ce3f895 added unwanted_file to gitignore
+* d0c8471 Added exit status 1 and 0 for if and else
+* 734791d added . at the end of sentences
+* b9c9fbe Added cpu_usage.py
+```
 
 
 
