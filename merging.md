@@ -43,6 +43,46 @@ Normally, Git can automatically merge files for us.
 But when we have a merge conflict,
 it will need a little help to figure out what to do
 
+```sh
+~/checks$ nano empty_file.py 
+~/checks$ git branch 
+* master
+  new-branch
+  new-new-branch
+
+~/checks$ git commit -a -m 'Added a '''line''' to the main function'
+[master 8cd9f96] Added a line to the main function
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+~/checks$ git checkout new-branch 
+Switched to branch 'new-branch'
+nishit@SHITBOT:~/checks$ ls
+cpu_usage.py
+   
+~/checks$ git checkout new-new-branch 
+Switched to branch 'new-new-branch'
+
+~/checks$ nano empty_file.py 
+~/checks$ git commit -a -m 'Added a print function to the main function'
+[new-new-branch d04a331] Added a print function to the main function
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+~/checks$ git checkout master 
+Switched to branch 'master'
+
+~/checks$ git merge new-new-branch 
+Auto-merging empty_file.py
+CONFLICT (content): Merge conflict in empty_file.py
+Automatic merge failed; fix conflicts and then commit the result.
+nishit@SHITBOT:~/checks$ nano empty_file.py 
+
+
+
+nishit@SHITBOT:~/checks$ git commit -a -m 'Added both lines (comment and print)'[master 498d83e] Added both lines (comment and print)
+nishit@SHITBOT:~/checks$ git merge new-new-branch 
+Already up to date.
+nishit@SHITBOT:~/checks$ 
+
+
+
 
 ```python3
 #!/usr/bin/env python3
