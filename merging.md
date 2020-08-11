@@ -43,6 +43,8 @@ Normally, Git can automatically merge files for us.
 But when we have a merge conflict,
 it will need a little help to figure out what to do
 
+Example :
+
 ```sh
 ~/checks$ nano empty_file.py 
 ~/checks$ git branch 
@@ -70,23 +72,21 @@ Switched to branch 'new-new-branch'
 ~/checks$ git checkout master 
 Switched to branch 'master'
 ```
+We've made changes to `empty_file.py` in both `master` and `new-new-branch`
+
+
 ```sh
 ~/checks$ git merge new-new-branch 
 Auto-merging empty_file.py
 CONFLICT (content): Merge conflict in empty_file.py
 Automatic merge failed; fix conflicts and then commit the result.
-nishit@SHITBOT:~/checks$ nano empty_file.py 
+
 ```
+So when we try to do a `git merge` git raises a `conflict` .
 
 ```sh
-nishit@SHITBOT:~/checks$ git commit -a -m 'Added both lines (comment and print)'[master 498d83e] Added both lines (comment and print)
-nishit@SHITBOT:~/checks$ git merge new-new-branch 
-Already up to date.
-nishit@SHITBOT:~/checks$ 
+~/checks$ nano empty_file.py
 ```
-
-
-
 ```python3
 #!/usr/bin/env python3
 
@@ -99,6 +99,17 @@ def main():
 
 main()
 ```
+This is what we see when we try to `resolve` the conflict . Git shows us the lines raising the `conflict`.
+
+```sh
+nishit@SHITBOT:~/checks$ git commit -a -m 'Added both lines (comment and print)'[master 498d83e] Added both lines (comment and print)
+nishit@SHITBOT:~/checks$ git merge new-new-branch 
+Already up to date.
+nishit@SHITBOT:~/checks$ 
+```
+In this way we can resolve any conflict
+
+
 
 
 
