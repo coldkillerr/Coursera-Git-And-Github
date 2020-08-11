@@ -155,5 +155,13 @@ Date:   Mon Aug 10 20:21:49 2020 +0530
 ```
 Now the `HEAD` points to both the `master` and `new-new-branch` .
 
+<h2> Deleting Branches </h2>
+
+We can do that by using `git branch -d`.
+
+```sh
+~/checks$ git branch -d new-new-new-branch 
+Deleted branch new-new-new-branch (was 8fd51b7).
+```
 
 
