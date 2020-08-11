@@ -44,3 +44,19 @@ But when we have a merge conflict,
 it will need a little help to figure out what to do
 
 
+```python3
+#!/usr/bin/env python3
+
+def main():
+<<<<<<< HEAD
+        '''This is just an empty function'''
+=======
+        print('This is the main function')
+>>>>>>> new-new-branch
+
+main()
+```
+
+
+
+
