@@ -60,27 +60,30 @@ cpu_usage.py
    
 ~/checks$ git checkout new-new-branch 
 Switched to branch 'new-new-branch'
+```
 
+```sh
 ~/checks$ nano empty_file.py 
 ~/checks$ git commit -a -m 'Added a print function to the main function'
 [new-new-branch d04a331] Added a print function to the main function
  1 file changed, 1 insertion(+), 1 deletion(-)
 ~/checks$ git checkout master 
 Switched to branch 'master'
-
+```
+```sh
 ~/checks$ git merge new-new-branch 
 Auto-merging empty_file.py
 CONFLICT (content): Merge conflict in empty_file.py
 Automatic merge failed; fix conflicts and then commit the result.
 nishit@SHITBOT:~/checks$ nano empty_file.py 
+```
 
-
-
+```sh
 nishit@SHITBOT:~/checks$ git commit -a -m 'Added both lines (comment and print)'[master 498d83e] Added both lines (comment and print)
 nishit@SHITBOT:~/checks$ git merge new-new-branch 
 Already up to date.
 nishit@SHITBOT:~/checks$ 
-
+```
 
 
 
