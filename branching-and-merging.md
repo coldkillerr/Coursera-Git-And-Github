@@ -1,4 +1,4 @@
-<h1> Branching and Merging </h1>
+<h1> Branching </h1>
 
 In Git, a branch at
 the most basic level is
