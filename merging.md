@@ -31,3 +31,16 @@ branches has diverged in some way, and
 there isn't a nice linear path to combine them via fast-forwarding.
 This happens when a commit is made on one branch
 after the point when both branches split. 
+
+<h2> Merge Conflicts </h2>
+
+From time to time,
+we might find that both the
+branches we're trying to merge
+have edits to the same part of the same file.
+This will result in something called a merge conflict.
+Normally, Git can automatically merge files for us.
+But when we have a merge conflict,
+it will need a little help to figure out what to do
+
+
