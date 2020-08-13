@@ -18,3 +18,4 @@ Some useful commands for getting started:
 | git clone URL | [Git clone is used to clone a remote repository into a local workspace](https://git-scm.com/docs/git-clone) |
 | git push | [Git push is used to push commits from your local repo to a remote repo](https://git-scm.com/docs/git-push) |
 | git pull | [Git pull is used to fetch the newest updates from a remote repository](https://git-scm.com/docs/git-pull) |
+| git config --global credential.helper cache | [This is used save your credentials to the device so that you don't need to input your creds everytime](https://git-scm.com/docs/git-config) |
