@@ -380,3 +380,16 @@ end up with a `separate commit` for merging the branches back into the main tree
 
 <h2> Pushing Remote Branches </h2>
 
+As we called up before,
+when using Git to work on
+a new feature or a big refactor of some kind,
+it's recommended best practice
+to create separate branches.
+There are many advantages to doing this.
+
+Lets create and swirch to a new branch `refactor`
+
+
+
+
+
