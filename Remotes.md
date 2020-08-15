@@ -254,12 +254,12 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 ```
 Git rejected our change,
 that's because the remote repository contains changes that we don't have in
-our local branch that Git can't fast-forward. 
+our local branch that Git can't `fast-forward`. 
 
 This means we need to sync our local remote branch
 with the remote repository before we can push.
 
-We can run git pull to do this .
+We can run `git pull` to do this .
 
 ```sh
 ~/checks/checks$ git pull
@@ -276,9 +276,9 @@ Automatic merge failed; fix conflicts and then commit the result.
 ```
 
  Git tried to automatically merge the local and
-remote changes to all_checks.py, but found a conflict.
-Let's first look at the tree of commits on all branches as
-represented by git log --graph --oneline --all.
+remote changes to `plain_python.py`, but found a conflict.
+Let's first look at the `tree` of commits on all branches as
+represented by `git log --graph --oneline --all`
 
 ```sh
 ~/checks/checks$ git log --oneline --graph --all
@@ -293,12 +293,12 @@ represented by git log --graph --oneline --all.
 |/  
 * f271073 Initial commit
 ```
-The graph indicates that our current commit and the commit in the origin/master
+The graph indicates that our current commit and the commit in the `origin/master`
 branch share a common ancestor, but they don't follow one another. 
 
-This means that we'll need to do a three-way merge.
+This means that we'll need to do a `three-way merge`
 To do this, let's look at the actual changes in that
-commit by running git log -p origin/master. 
+commit by running `git log -p origin/master` 
 
 ```sh
 ~/checks/checks$ git log -p origin/master 
@@ -326,7 +326,7 @@ Date:   Sat Aug 15 13:56:16 2020 +0530
     Create plain_python.py
 ```
 
-Let's fix it by editing the file to remove the conflict.
+Let's fix it by editing the file to remove the `conflict`.
 
 ```sh
 ~/checks/checks$ git commit -a -m "solved a conflict"
@@ -372,3 +372,8 @@ by calling `git log --graph --oneline`
 |/  
 * f271073 Initial commit
 ```
+
+We see that the latest commit is the merge, followed by the two commits that
+caused the merge conflict, which are on split paths in our graph.
+As we called out before, when Git needs to do a `three-way merge`, we
+end up with a `separate commit` for merging the branches back into the main tree
