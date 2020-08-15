@@ -217,3 +217,79 @@ If there is a new branch we can checkout that branch using `git checkout`
 | git merge <branch>        | Merge joins branches together.                                                                                |
 | git merge --abort         | If there are merge conflicts (meaning files are incompatible), --abort can be used to abort the merge action. |
 | git log --graph --oneline | This shows a summarized view of the commit history for a repo.                                                |
+  
+  <h2> Solving Conflicts </h2>
+  
+  Imagine you and your co-worker made a change in the same part of the code . Now this leads to the arousal of a conflict.
+  
+  ~/checks/checks$ git add -p
+diff --git a/plain_python.py b/plain_python.py
+index 68a2498..de37084 100644
+--- a/plain_python.py
++++ b/plain_python.py
+@@ -1,4 +1,4 @@
+ def main():
+-  pass
++  print('We are in the main')
+   
+ main()
+(1/1) Stage this hunk [y,n,q,a,d,e,?]? y
+
+```sh
+
+~/checks/checks$ git commit -m "Added a print function in main function"
+[master 8190a5d] Added a print function in main function
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+~/checks/checks$ git push
+Username for 'https://github.com': coldkillerr
+Password for 'https://coldkillerr@github.com': 
+To https://github.com/coldkillerr/checks.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/coldkillerr/checks.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+```
+Git rejected our change,
+that's because the remote repository contains changes that we don't have in
+our local branch that Git can't fast-forward. 
+
+This means we need to sync our local remote branch
+with the remote repository before we can push.
+
+We can run git pull to do this .
+
+```sh
+~/checks/checks$ git pull
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 679 bytes | 679.00 KiB/s, done.
+From https://github.com/coldkillerr/checks
+   939480c..dde8f0f  master     -> origin/master
+Auto-merging plain_python.py
+CONFLICT (content): Merge conflict in plain_python.py
+Automatic merge failed; fix conflicts and then commit the result.
+```
+
+ Git tried to automatically merge the local and
+remote changes to all_checks.py, but found a conflict.
+Let's first look at the tree of commits on all branches as
+represented by git log --graph --oneline --all.
+
+```sh
+~/checks/checks$ git log --oneline --graph --all
+* 8190a5d (HEAD -> master) Added a print function in main function
+| * dde8f0f (origin/master, origin/HEAD) added print function in main function
+|/  
+* 939480c Create plain_python.py
+*   c5ee76c Merge branch 'master' of https://github.com/coldkillerr/checks
+|\  
+| * 24a8e4e Added a line to the README.md file
+* | bc5feac Added two new files
+|/  
+* f271073 Initial commit
+```
