@@ -377,3 +377,6 @@ We see that the latest commit is the merge, followed by the two commits that
 caused the merge conflict, which are on split paths in our graph.
 As we called out before, when Git needs to do a `three-way merge`, we
 end up with a `separate commit` for merging the branches back into the main tree
+
+<h2> Pushing Remote Branches </h2>
+
