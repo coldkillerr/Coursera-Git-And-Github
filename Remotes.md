@@ -194,3 +194,5 @@ Your branch is up to date with 'origin/master'.
 
 nothing to commit, working tree clean
 ```
+We see that now our `master` branch is up to
+date with the remote `origin/master` branch. 
