@@ -195,4 +195,11 @@ Your branch is up to date with 'origin/master'.
 nothing to commit, working tree clean
 ```
 We see that now our `master` branch is up to
-date with the remote `origin/master` branch. 
+date with the remote `origin/master` branch.
+
+Since `fetching` and `merging` are so
+common, Git gives us the `git pull` command that does both for us.
+Running git pull will fetch the `remote copy` of the current branch and
+automatically try to merge it into the current local branch.
+
+If there is a new branch we can checkout that branch using `git checkout`
