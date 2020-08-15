@@ -61,3 +61,98 @@ branches as well.
 On branch master
 Your branch is up to date with 'origin/master'.
 ```
+
+<h2> What if the remote repo is out of date ? </h2>
+
+Lets assume someone addes files to our repository on the repository which have not been added to our remote repository.
+
+```sh
+~/checks/checks$ git remote show origin 
+* remote origin
+  Fetch URL: https://github.com/coldkillerr/checks.git
+  Push  URL: https://github.com/coldkillerr/checks.git
+  HEAD branch: master
+  Remote branch:
+    master tracked
+  Local branch configured for 'git pull':
+    master merges with remote master
+  Local ref configured for 'git push':
+    master pushes to master (local out of date)
+```
+
+From the above command we see that the `master` branch is locally `out of date`
+
+This happens when there were commits
+done to the repo that aren't yet reflected locally.
+
+Git doesn't keep remote and local branches
+in sync automatically,
+it waits until we execute
+commands to move data around when we're ready.
+
+To sync the data, we use the `git fetch` command. 
+
+Fetched content is downloaded to
+the remote branches on our repository.
+So it's not automatically mirrored to our local branches. 
+
+```sh
+~/checks/checks$ git fetch
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 683 bytes | 683.00 KiB/s, done.
+From https://github.com/coldkillerr/checks
+   c5ee76c..939480c  master     -> origin/master
+```
+
+
+We can run `git checkout` on
+these branches to see the working tree,
+and we can run git log to see the commit history.
+
+```sh
+~/checks/checks$ git checkout 
+Your branch is behind 'origin/master' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+```
+Let's look at the current commits in the remote repo by
+running `git log origin/master.`
+
+
+```sh
+~/checks/checks$ git log origin/master
+commit 939480ccbdc8a423e7874701b3683255bd7e1c57 (origin/master, origin/HEAD)
+Author: Nishit Jain <yonishitjain123456@gmail.com>
+Date:   Sat Aug 15 13:56:16 2020 +0530
+
+    Create plain_python.py
+
+commit c5ee76c24cfaac37d8fb058ed335e6adc57bfb79 (HEAD -> master)
+Merge: bc5feac 24a8e4e
+Author: coldkillerr <yonishitjain123456@gmail.com>
+Date:   Sat Aug 15 13:43:06 2020 +0530
+
+    Merge branch 'master' of https://github.com/coldkillerr/checks
+
+commit bc5feaca5ecd16b7f070fddc2212296cd622de2f
+Author: coldkillerr <yonishitjain123456@gmail.com>
+Date:   Sat Aug 15 13:42:07 2020 +0530
+
+    Added two new files
+
+commit 24a8e4e278e786604e196e4309ce8c8df85f47c9
+Author: coldkillerr <yonishitjain123456@gmail.com>
+Date:   Thu Aug 13 12:50:38 2020 +0530
+
+nishit@SHITBOT:~/checks/checks$ git checkout 
+Your branch is behind 'origin/master' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+```
+
+Looking at this output,
+we can see that the remote `origin/branch`
+is pointing to the latest commit.
+While the `local master branch` is pointing
+to the previous commit we made earlier on. 
