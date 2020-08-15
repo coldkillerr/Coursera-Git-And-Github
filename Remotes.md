@@ -203,3 +203,17 @@ Running git pull will fetch the `remote copy` of the current branch and
 automatically try to merge it into the current local branch.
 
 If there is a new branch we can checkout that branch using `git checkout`
+
+<h2> Git Remotes Cheat-Sheet </h2>
+
+|          Command          |                                              Explanation & Links                                              |
+|:-------------------------:|:-------------------------------------------------------------------------------------------------------------:|
+| git remote                | Lists remote repos                                                                                            |
+| git remote -v             | List remote repos verbosely                                                                                   |
+| git remote show <name>    | Describes a single remote repo                                                                                |
+| git remote update         | Fetches the most up-to-date objects                                                                           |
+| git fetch                 | Downloads specific objects                                                                                    |
+| git branch -r             | Lists remote branches; can be combined with other branch arguments to manage remote branches                  |
+| git merge <branch>        | Merge joins branches together.                                                                                |
+| git merge --abort         | If there are merge conflicts (meaning files are incompatible), --abort can be used to abort the merge action. |
+| git log --graph --oneline | This shows a summarized view of the commit history for a repo.                                                |
