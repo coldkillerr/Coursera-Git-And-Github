@@ -156,3 +156,41 @@ we can see that the remote `origin/branch`
 is pointing to the latest commit.
 While the `local master branch` is pointing
 to the previous commit we made earlier on. 
+
+Lets see what happens when we run `git status` now
+
+```sh
+~/checks/checks$ git status
+On branch master
+Your branch is behind 'origin/master' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+
+nothing to commit, working tree clean
+```
+
+Git status helpfully tells us that
+there's a commit that we don't have in our branch by letting us know our branches
+behind their remote origin/master branch.
+If we want to integrate
+the branches into our master branch,
+we can perform a merge operation,
+which merges the origin/master branch
+into our local master branch.
+
+
+To do that, we'll call `git merge origin/master`
+
+```sh
+~/checks/checks$ git merge origin/master 
+Updating c5ee76c..939480c
+Fast-forward
+ plain_python.py | 4 ++++
+ 1 file changed, 4 insertions(+)
+ create mode 100644 plain_python.py
+
+~/checks/checks$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+```
