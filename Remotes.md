@@ -293,3 +293,82 @@ represented by git log --graph --oneline --all.
 |/  
 * f271073 Initial commit
 ```
+The graph indicates that our current commit and the commit in the origin/master
+branch share a common ancestor, but they don't follow one another. 
+
+This means that we'll need to do a three-way merge.
+To do this, let's look at the actual changes in that
+commit by running git log -p origin/master. 
+
+```sh
+~/checks/checks$ git log -p origin/master 
+commit dde8f0ff50f8868b56a80a304c0efd1fe6820980 (origin/master, origin/HEAD)
+Author: Nishit Jain <email>
+Date:   Sat Aug 15 14:56:27 2020 +0530
+
+    added print function in main function
+
+diff --git a/plain_python.py b/plain_python.py
+index 68a2498..76102b5 100644
+--- a/plain_python.py
++++ b/plain_python.py
+@@ -1,4 +1,4 @@
+ def main():
+-  pass
++  print('This is main')
+   
+ main()
+
+commit 939480ccbdc8a423e7874701b3683255bd7e1c57
+Author: Nishit Jain <email>
+Date:   Sat Aug 15 13:56:16 2020 +0530
+
+    Create plain_python.py
+```
+
+Let's fix it by editing the file to remove the conflict.
+
+```sh
+~/checks/checks$ git commit -a -m "solved a conflict"
+[master b62d4d7] solved a conflict
+
+~/checks/checks$ git push
+Username for 'https://github.com': coldkillerr
+Password for 'https://coldkillerr@github.com': 
+remote: Invalid username or password.
+fatal: Authentication failed for 'https://github.com/coldkillerr/checks.git/'
+
+~/checks/checks$ git push
+Username for 'https://github.com': coldkillerr
+Password for 'https://coldkillerr@github.com': 
+Enumerating objects: 10, done.
+Counting objects: 100% (10/10), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 624 bytes | 624.00 KiB/s, done.
+Total 6 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 1 local object.
+To https://github.com/coldkillerr/checks.git
+   dde8f0f..b62d4d7  master -> master
+```
+
+Yes, after fixing the conflict, we were able to push our work to the remote repo.
+Let's look at the commit history of the master branch now,
+by calling `git log --graph --oneline`
+
+
+```sh
+~/checks/checks$ git log --oneline --graph --all
+*   b62d4d7 (HEAD -> master, origin/master, origin/HEAD) solved a conflict
+|\  
+| * dde8f0f added print function in main function
+* | 8190a5d Added a print function in main function
+|/  
+* 939480c Create plain_python.py
+*   c5ee76c Merge branch 'master' of https://github.com/coldkillerr/checks
+|\  
+| * 24a8e4e Added a line to the README.md file
+* | bc5feac Added two new files
+|/  
+* f271073 Initial commit
+```
