@@ -421,9 +421,91 @@ To https://github.com/coldkillerr/checks.git
  * [new branch]      refactor -> refactor
 Branch 'refactor' set up to track remote branch 'refactor' from 'origin'.
 ```
-As we see git gives us a lot of info and from the last line we see that the branch has been pushed
+As we see git gives us a lot of info and from the last line we see that the branch has been pushed.
+Lets make some more changes to the branch refactor.
 
 
 
+```sh
+
+~/checks/checks$ nano cpu_usage.py 
+~/checks/checks$ nano empty_file.py 
+
+~/checks/checks$ git commit -a -m 'changed percentage in cpu_usage.py , added add function in empty_file.py'
+[refactor 8b608b3] changed percentage in cpu_usage.py , added add function in empty_file.py
+ 2 files changed, 4 insertions(+), 1 deletion(-)
+
+~/checks/checks$ git push -u origin refactor 
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 506 bytes | 506.00 KiB/s, done.
+Total 4 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/coldkillerr/checks.git
+   db79f36..8b608b3  refactor -> refactor
+Branch 'refactor' set up to track remote branch 'refactor' from 'origin'.
+
+~/checks/checks$ git log --graph --oneline 
+* 8b608b3 (HEAD -> refactor, origin/refactor) changed percentage in cpu_usage.py , added add function in empty_file.py
+* db79f36 Added a new hello_world() function
+*   b62d4d7 solved a conflict
+|\  
+| * dde8f0f added print function in main function
+* | 8190a5d Added a print function in main function
+|/  
+* 939480c Create plain_python.py
+*   c5ee76c Merge branch 'master' of https://github.com/coldkillerr/checks
+|\  
+| * 24a8e4e Added a line to the README.md file
+* | bc5feac Added two new files
+|/  
+* f271073 Initial commit
+
+~/checks/checks$ git checkout master 
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+nishit@SHITBOT:~/checks/checks$ git pull
+Already up to date.
+
+~/checks/checks$ git log --graph --oneline 
+*   3b2cd39 (HEAD -> master, origin/master, origin/HEAD) Merge pull request #1 from coldkillerr/refactor
+|\  
+| * db79f36 Added a new hello_world() function
+|/  
+*   b62d4d7 solved a conflict
+|\  
+| * dde8f0f added print function in main function
+* | 8190a5d Added a print function in main function
+|/  
+* 939480c Create plain_python.py
+*   c5ee76c Merge branch 'master' of https://github.com/coldkillerr/checks
+|\  
+| * 24a8e4e Added a line to the README.md file
+* | bc5feac Added two new files
+|/  
+* f271073 Initial commit
+
+~/checks/checks$ git checkout refactor 
+Switched to branch 'refactor'
+Your branch is up to date with 'origin/refactor'.
+nishit@SHITBOT:~/checks/checks$ git log --graph --oneline 
+* 8b608b3 (HEAD -> refactor, origin/refactor) changed percentage in cpu_usage.py , added add function in empty_file.py
+* db79f36 Added a new hello_world() function
+*   b62d4d7 solved a conflict
+|\  
+| * dde8f0f added print function in main function
+* | 8190a5d Added a print function in main function
+|/  
+* 939480c Create plain_python.py
+*   c5ee76c Merge branch 'master' of https://github.com/coldkillerr/checks
+|\  
+| * 24a8e4e Added a line to the README.md file
+* | bc5feac Added two new files
+|/  
+* f271073 Initial commit
+
+```
 
 
