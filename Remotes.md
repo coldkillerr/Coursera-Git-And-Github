@@ -507,5 +507,13 @@ nishit@SHITBOT:~/checks/checks$ git log --graph --oneline
 * f271073 Initial commit
 
 ```
+As we can see the changes made in the reafctor has not been merged .
 
-
+```sh
+~/checks/checks$ git checkout refactor 
+Switched to branch 'refactor'
+Your branch is up to date with 'origin/refactor'.
+nishit@SHITBOT:~/checks/checks$ git rebase master
+First, rewinding head to replay your work on top of it...
+Applying: changed percentage in cpu_usage.py , added add function in empty_file.py
+```
