@@ -389,6 +389,40 @@ There are many advantages to doing this.
 
 Lets create and swirch to a new branch `refactor`
 
+```sh
+~/checks/checks$ git checkout refactor
+Already on 'refactor'
+```
+
+Lets update the code to add a new `hello_world` feature 
+
+```sh
+~/checks/checks$ git commit -a -m 'Added a new hello_world() function'
+[refactor db79f36] Added a new hello_world() function
+ 1 file changed, 5 insertions(+)
+```
+
+Now when we push the code to the `origin` repository we have to add the `-u` for `upstream` and the branch name to be pushed .
+
+```sh
+~/checks/checks$ git push -u origin refactor 
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 403 bytes | 403.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote: 
+remote: Create a pull request for 'refactor' on GitHub by visiting:
+remote:      https://github.com/coldkillerr/checks/pull/new/refactor
+remote: 
+To https://github.com/coldkillerr/checks.git
+ * [new branch]      refactor -> refactor
+Branch 'refactor' set up to track remote branch 'refactor' from 'origin'.
+```
+As we see git gives us a lot of info and from the last line we see that the branch has been pushed
+
 
 
 
