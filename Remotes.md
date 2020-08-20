@@ -607,3 +607,13 @@ enough not to need a separate branch and
 your collaborators just happened
 to commit something at the same time.
 
+So lets make a change to our code 
+
+```sh
+~/checks/checks$ nano empty_file.py 
+
+~/checks/checks$ git commit -a -m 'added substract function'
+[master 4fd1edb] added substract function
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+```
+
