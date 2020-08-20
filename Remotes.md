@@ -586,4 +586,5 @@ remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
 To https://github.com/coldkillerr/checks.git
    3b2cd39..ecb3a4d  master -> master
 ```
+<h2> Another use of rebase </h2>
 
