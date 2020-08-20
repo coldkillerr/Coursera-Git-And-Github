@@ -92,6 +92,35 @@ Branch 'mybranch' set up to track remote branch 'mybranch' from 'origin'.
 
 ```
 
-Now as the code has been pushed we are ready to make a `pull request` to the original repository from where it has been `forked`.
+Now as the code has been pushed we are ready to make a `pull request` to the original repository from where it has been `forked`.We can do this using the web app.
+
+Before creating a pull request,
+it's always important to check
+that the code will `merge` successfully.
 
 
+
+`GitHub` tells us that our change can be
+automatically merged, which is great news.
+If this wasn't the case,
+we'd need to `rebase` our change against
+the current branch of the original repo
+so that it could be merged.
+
+
+The window is showing us the `TextBox`
+where we can enter `comments` about our change.
+We should use this to explain
+why we're creating this pull request.
+This lets the person that will approve the change
+understand why they should
+merge the change into the main tree.
+
+After all this we can create the pull request by clicking the `Create Pull Request` button. 
+
+
+The number next to the name of
+our pull request is the identifier
+that's used in GitHub to track issues and pull requests.
+We can use this `identifying number` to
+access this pull request anytime we need it. 
