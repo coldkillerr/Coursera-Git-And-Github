@@ -680,4 +680,4 @@ skip the conflicting commit
 or even abort the rebased completely.
 In this example, we want to fix the conflict.
 So let's do that. We'll start by looking at
-the current state of the empty_file.py file. 
+the current state of the `empty_file.py` file. 
