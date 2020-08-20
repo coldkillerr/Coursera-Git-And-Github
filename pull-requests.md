@@ -92,3 +92,6 @@ Branch 'mybranch' set up to track remote branch 'mybranch' from 'origin'.
 
 ```
 
+Now as the code has been pushed we are ready to make a `pull request` to the original repository from where it has been `forked`.
+
+
