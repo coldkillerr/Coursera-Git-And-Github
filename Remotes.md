@@ -588,3 +588,22 @@ To https://github.com/coldkillerr/checks.git
 ```
 <h2> Another use of rebase </h2>
 
+We looked at
+an example use case for git rebase.
+Where we used it to rebase
+a feature branch so that it could be cleanly integrated.
+
+
+There are many other possible uses of rebase.
+One common example is to
+rebase the changes in the master branch
+when someone else also made
+changes and we want to keep history linear.
+
+
+This is a pretty common occurrence
+when you're working on a change that's small
+enough not to need a separate branch and
+your collaborators just happened
+to commit something at the same time.
+
