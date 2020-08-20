@@ -617,3 +617,21 @@ So lets make a change to our code
  1 file changed, 5 insertions(+), 1 deletion(-)
 ```
 
+We want to check if one of
+our teammates also made a change
+in the `master` branch while we were working on our change.
+We saw how to do that by running `git pull` which
+will automatically create a `three-way merge` if necessary.
+
+
+In this example, we want to look at
+a different approach to keep our project history linear.
+So we'll start by calling `git
+fetch` which you might remember we'll put
+the latest changes into the origin slash
+master branch but we
+won't apply them to our local master branch. 
+
+```sh
+~/checks/checks$ git fetch
+```
