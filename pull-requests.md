@@ -45,4 +45,50 @@ Lets look at the other way
 
 <h2> The typical Pull Request Workflow </h2>
 
+Lets contribute to a colleague's code.
+First we will make a `fork` of the original code .
+Then we can start working on that code by cloning into it on our local machine.
+
+
+```sh
+~$ git clone https://github.com/nishitjain12/test.git
+fatal: destination path 'test' already exists and is not an empty directory.
+
+~$ cd test
+
+~/test$ git checkout -b mybranch
+Switched to a new branch 'mybranch'
+
+~/test$ ls
+example.py  new_file.py  README.md
+nishit@SHITBOT:~/test$ cat example.py 
+def git_opeation():
+ print("I am adding example.py file to the remote repository.")
+git_opeation()
+
+~/test$ nano example.py 
+
+~/test$ git add example.py 
+
+~/test$ git commit -a -m 'added main if conditional'
+[mybranch e75cc4d] added main if conditional
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+~/test$ git push -u origin mybranch 
+
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 426 bytes | 426.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+remote: 
+remote: Create a pull request for 'mybranch' on GitHub by visiting:
+remote:      https://github.com/nishitjain12/test/pull/new/mybranch
+remote: 
+To https://github.com/nishitjain12/test.git
+ * [new branch]      mybranch -> mybranch
+Branch 'mybranch' set up to track remote branch 'mybranch' from 'origin'.
+
+```
 
