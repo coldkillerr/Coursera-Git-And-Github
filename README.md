@@ -8,3 +8,4 @@
 6. [Branching and Merging Cheat Sheet](https://github.com/coldkillerr/Coursera-Git-And-Github/blob/master/Git%20Branches%20and%20Merging%20Cheat%20Sheet.md)
 7. [Basic github](https://github.com/coldkillerr/Coursera-Git-And-Github/blob/master/basic-Github.md)
 8. [Remotes](https://github.com/coldkillerr/Coursera-Git-And-Github/blob/master/Remotes.md)
+9. [Pull Requests](https://github.com/coldkillerr/Coursera-Git-And-Github/blob/master/pull-requests.md)
