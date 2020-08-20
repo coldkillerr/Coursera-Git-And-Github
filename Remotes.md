@@ -704,3 +704,41 @@ Applying: added substract function
 ```
 
 Now we've added the changes and continued with the rebase using `git rebase --continue`
+
+let's check out the output of
+`git log --graph --oneline`
+to see what the history looks like at this point. 
+
+```sh
+~/checks/checks$ git log --graph --oneline 
+* a94d394 (HEAD -> master) added substract function
+* c24f2af (origin/master, origin/HEAD) Update empty_file.py
+* ecb3a4d changed percentage in cpu_usage.py , added add function in empty_file.py
+*   3b2cd39 Merge pull request #1 from coldkillerr/refactor
+|\  
+| * db79f36 Added a new hello_world() function
+|/  
+*   b62d4d7 solved a conflict
+|\  
+| * dde8f0f added print function in main function
+* | 8190a5d Added a print function in main function
+|/  
+* 939480c Create plain_python.py
+*   c5ee76c Merge branch 'master' of https://github.com/coldkillerr/checks
+|\  
+| * 24a8e4e Added a line to the README.md file
+* | bc5feac Added two new files
+|/  
+* f271073 Initial commit
+```
+
+
+What we did just now to resolve the conflict is
+very similar to what we did earlier to merge our changes.
+The difference is, that the commit history
+ended up being `linear` instead of `branching` out.
+
+
+We're now ready to `push` our new check to the remote repo.
+
+
