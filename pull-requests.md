@@ -37,3 +37,12 @@ requests that people with commit access can then apply.
 Typically, the owners of the repo will review the changes before merging them.
 Checking that they match the development guidelines for the project and
 that the license is valid and so on. 
+
+
+One way of doing this is through the `web application` .
+
+Lets look at the other way 
+
+<h2> The typical Pull Request Workflow </h2>
+
+
