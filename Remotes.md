@@ -741,4 +741,16 @@ ended up being `linear` instead of `branching` out.
 
 We're now ready to `push` our new check to the remote repo.
 
+```sh
+~/checks/checks$ git push 
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 382 bytes | 382.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/coldkillerr/checks.git
+   c24f2af..a94d394  master -> master
+```
 
