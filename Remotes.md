@@ -694,3 +694,4 @@ Hello world
 13
 1
 ```
+So now the conflict is resolved and the code is working .
