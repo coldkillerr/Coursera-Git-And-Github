@@ -660,3 +660,24 @@ Resolve all conflicts manually, mark them as resolved with
 You can instead skip this commit: run "git rebase --skip".
 To abort and get back to the state before "git rebase", run "git rebase --abort".
 ```
+We've got a conflict and we'll need to fix it.
+Git is giving us a lot of info on what
+it tried to do including what worked,
+what didn't work and what we can do about it.
+
+
+Since we asked it to rebase,
+it tried to `rewind` our changes and apply them
+on top of what was in the `origin/master` branch. But when trying to `merge` our changes with
+the changes made by our colleague in the file,
+there was a `merge conflict`
+
+
+The output gives us a bunch
+of instructions on how to solve this.
+We could fix the conflict,
+skip the conflicting commit
+or even abort the rebased completely.
+In this example, we want to fix the conflict.
+So let's do that. We'll start by looking at
+the current state of the empty_file.py file. 
