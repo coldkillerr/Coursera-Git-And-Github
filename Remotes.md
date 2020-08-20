@@ -635,3 +635,28 @@ won't apply them to our local master branch.
 ```sh
 ~/checks/checks$ git fetch
 ```
+This means that if we tried to merge our changes,
+we end up with a `three-way merge`.
+Instead, we'll now run `git rebase` against
+our `origin/master` to rebase our changes
+against those made by
+our colleague and keep history linear. 
+
+
+```sh
+~/checks/checks$ git rebase origin/master
+First, rewinding head to replay your work on top of it...
+Applying: added substract function
+Using index info to reconstruct a base tree...
+M	empty_file.py
+Falling back to patching base and 3-way merge...
+Auto-merging empty_file.py
+CONFLICT (content): Merge conflict in empty_file.py
+error: Failed to merge in the changes.
+Patch failed at 0001 added substract function
+hint: Use 'git am --show-current-patch' to see the failed patch
+Resolve all conflicts manually, mark them as resolved with
+"git add/rm <conflicted_files>", then run "git rebase --continue".
+You can instead skip this commit: run "git rebase --skip".
+To abort and get back to the state before "git rebase", run "git rebase --abort".
+```
