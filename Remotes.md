@@ -695,3 +695,12 @@ Hello world
 1
 ```
 So now the conflict is resolved and the code is working .
+
+```sh
+~/checks/checks$ git add empty_file.py 
+
+~/checks/checks$ git rebase --continue 
+Applying: added substract function
+```
+
+Now we've added the changes and continued with the rebase using `git rebase --continue`
