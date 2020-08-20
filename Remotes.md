@@ -681,3 +681,16 @@ or even abort the rebased completely.
 In this example, we want to fix the conflict.
 So let's do that. We'll start by looking at
 the current state of the `empty_file.py` file. 
+
+To solve the conflict lets edit the file as per the requirement.
+
+```sh
+~/checks/checks$ nano empty_file.py 
+```
+```sh
+~/checks/checks$ python3 empty_file.py 
+This is the main function
+Hello world
+13
+1
+```
