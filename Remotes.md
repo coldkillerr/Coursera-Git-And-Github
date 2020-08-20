@@ -513,7 +513,77 @@ As we can see the changes made in the reafctor has not been merged .
 ~/checks/checks$ git checkout refactor 
 Switched to branch 'refactor'
 Your branch is up to date with 'origin/refactor'.
-nishit@SHITBOT:~/checks/checks$ git rebase master
+
+~/checks/checks$ git rebase master
 First, rewinding head to replay your work on top of it...
 Applying: changed percentage in cpu_usage.py , added add function in empty_file.py
 ```
+
+```sh
+~/checks/checks$ git log --oneline --graph 
+* ecb3a4d (HEAD -> refactor) changed percentage in cpu_usage.py , added add function in empty_file.py
+*   3b2cd39 (origin/master, origin/HEAD, master) Merge pull request #1 from coldkillerr/refactor
+|\  
+| * db79f36 Added a new hello_world() function
+|/  
+*   b62d4d7 solved a conflict
+|\  
+| * dde8f0f added print function in main function
+* | 8190a5d Added a print function in main function
+|/  
+* 939480c Create plain_python.py
+*   c5ee76c Merge branch 'master' of https://github.com/coldkillerr/checks
+|\  
+| * 24a8e4e Added a line to the README.md file
+* | bc5feac Added two new files
+|/  
+* f271073 Initial commit
+```
+Now we can see the `master` branch and linear history with our list of commits.
+We're ready to `merge` our commits back onto the main trunk of our repo and
+have this `fast forwarded`.
+To do that, we'll check out the master branch and merge the refactor branch. 
+
+```sh
+~/checks/checks$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+~/checks/checks$ git merge
+Already up to date.
+~/checks/checks$ git merge refactor 
+Updating 3b2cd39..ecb3a4d
+Fast-forward
+ cpu_usage.py  | 2 +-
+ empty_file.py | 3 +++
+ 2 files changed, 4 insertions(+), 1 deletion(-)
+```
+
+Awesome, we were able to merge our branch through a `fast forward merge` and
+keep our history `linear`.
+We're now done with our `refactor` and
+can get rid of that branch, both `remotely` and `locally`
+
+```sh
+~/checks/checks$ git push --delete origin refactor 
+To https://github.com/coldkillerr/checks.git
+ - [deleted]         refactor
+
+~/checks/checks$ git branch -d refactor 
+Deleted branch refactor (was ecb3a4d).
+```
+
+Now we can push the changes to the github repository.
+
+```sh
+~/checks/checks$ git push
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 509 bytes | 509.00 KiB/s, done.
+Total 4 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/coldkillerr/checks.git
+   3b2cd39..ecb3a4d  master -> master
+```
+
