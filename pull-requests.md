@@ -185,3 +185,79 @@ diff` for the changes that we've made.
 It will use `green` for
 new lines and `red` for lines that were deleted. 
 
+
+<h2> Squashing Changes </h2>
+
+So say the project maintainers
+ask us to create a single commit that
+includes both changes and
+a more detailed description than the one we submitted.
+
+
+We can do that by using
+the interactive version of
+the rebase command called `rebase-i`
+as the parameter to the command
+will pass the master branch.
+
+
+So we'll call `git rebase-i master`
+
+
+
+When we call an interactive rebase,
+a text editor opens with a list of
+all the selected commits
+from the oldest to the most recent.
+
+
+By changing the first word of each line,
+we can select what we want to do with the commits.
+The default action here is `pick` which takes
+the commits and `rebases
+them against the branch` we selected.
+This is what we do with git rebase in
+when we
+called it `without the -i` flag.
+
+
+But now we can change the action to something else.
+The comments in the file tells
+all the different commands we can use for our commits.
+For example, we can reword
+a commit message keeping
+the changes as they are but modifying the commit message.
+
+We can also edit
+the commit to add or remove changes from it.
+We have two options for combining commits,
+`squash` and `fix up`
+In both cases, the contents of
+the selected commit are merged
+into the previous commit in the list.
+
+
+The difference is what happens with the commit messages.
+When we choose `squash`,
+the commit messages are added together and an editor
+opens up to let us make any necessary changes.
+When we choose fix up,
+the commit message for that commit is discarded. 
+
+
+Once we've told git that we want to
+`squash` a commit unto the one before it,
+we're given another file to edit.
+In this case, it's the combined commit message.
+As usual, git shows us some helpful information in
+the comments including which files are
+modified and what commits are being combined. 
+
+As we expected, git doesn't like us trying to
+push our change because it can't be `fast-forwarded`.
+But in this case, we don't want to create a merge.
+Instead, we want to
+replace the old commits with the new one.
+To do this, we will call `git push -f` to
+force git to push
+the current snapshot into the repo as is. 
