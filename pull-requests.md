@@ -125,7 +125,7 @@ that's used in GitHub to track issues and pull requests.
 We can use this `identifying number` to
 access this pull request anytime we need it. 
 
-<h2> Updating an Existing Workflow </h2>
+<h2> Updating an Existing Pull Request </h2>
 
 When we send a `pull request`,
 it's pretty common to receive some `comments` from
@@ -134,3 +134,6 @@ The improvement could be to add `documentation` or tests,
 or maybe we need to make sure that change works for
 all cases or that it
 follows the project style `guidelines`.
+
+So back to our change,
+lets say we got a comment from one of our colleagues. 
