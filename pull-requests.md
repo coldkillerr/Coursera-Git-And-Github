@@ -137,3 +137,23 @@ follows the project style `guidelines`.
 
 So back to our change,
 lets say we got a comment from one of our colleagues. 
+
+Now do the same process to get the repo on your local machine .
+Then change the required code and commit it .Then push your code
+
+```sh
+~/test$ nano example.py 
+~/test$ git commit -a -m 'added a comment in main function'
+[mybranch 751a875] added a comment in main function
+ 1 file changed, 2 insertions(+)
+
+~/test$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 471 bytes | 471.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/nishitjain12/test.git
+   e75cc4d..751a875  mybranch -> mybranch
+```
